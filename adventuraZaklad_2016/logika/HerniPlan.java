@@ -20,6 +20,7 @@ public class HerniPlan {
     private Prostor aktualniProstor;
     private Batoh batoh;
     private static final int kapacitaBatohu = 4;
+    private HashSet<Prostor> prostory = new HashSet<>();
 
     
      /**
@@ -50,10 +51,16 @@ public class HerniPlan {
         garaz.setVychod(bytPartnerky);
         bytPartnerky.setVychod(garaz);
         bytPartnerky.zamknout(true);
+        koupelna.zamknout(true);
+        prostory.add(pokoj);
+        prostory.add(koupelna);
+        prostory.add(jidlena);
+        prostory.add(garaz);
+        prostory.add(bytPartnerky);
 
         //přiřazují se věci prostorům
         pokoj.vlozVec(new Vec("klíče_od_auta", true));
-        koupelna.vlozVec(new Vec("sprcha", false));
+        koupelna.vlozVec(new Vec("líčení", false));
         koupelna.vlozVec(new Vec("pinetky", true));
         jidlena.vlozVec(new Vec("snídaně", false));
         jidlena.vlozVec(new Vec("svačina", true));
@@ -72,6 +79,14 @@ public class HerniPlan {
     
     public Prostor getAktualniProstor() {
         return aktualniProstor;
+    }
+    public Prostor getProstor(String nazevProstoru){
+        for(Prostor prostor : prostory){
+            if (prostor.getNazev().equals(nazevProstoru)){
+                return prostor;
+            }
+        }
+        return null;
     }
 
 

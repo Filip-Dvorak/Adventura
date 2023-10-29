@@ -45,8 +45,11 @@ class PrikazJdi implements IPrikaz {
             return "Tam se odsud jít nedá!";
         }
         else {
-            if (sousedniProstor.jeZamceno()) {
-                return "Tam se ještě nemůžeš vydat. nezapomněl jsi na něco???";
+            if (sousedniProstor.jeZamceno() && sousedniProstor.getNazev().equals("byt_partnerky")) {
+                return "Pěšky je to daleko, musíš jet autem";
+            }
+            if (sousedniProstor.jeZamceno() && sousedniProstor.getNazev().equals("koupelna")) {
+                return "Měl by ses nejdřív najíst a až potom se nalíčit (aby sis to nezničil jako minule)";
             }
             plan.setAktualniProstor(sousedniProstor);
             return sousedniProstor.dlouhyPopis();

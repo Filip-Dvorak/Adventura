@@ -22,12 +22,19 @@ public class PrikazPouzij implements IPrikaz{
             if(nazevVeci.equals("sprcha") && kdejsme.getNazev().equals("koupelna")){
                 return "Osprchoval jsi se";
             }
+            if(nazevVeci.equals("auto") && kdejsme.getNazev().equals("garáž")){
+                return "Auto bez klíčů nenastartuješ";
+            }
+            if(nazevVeci.equals("snídaně") && kdejsme.getNazev().equals("jídelna")){
+                plan.getProstor("koupelna").zamknout(false);
+                return "To byl dobrej chálek";
+            }
             return "Tohle u sebe v batohu nemáš";
         }
         if(vec.getNazev().equals("klíče_od_auta") &&kdejsme.getNazev().equals("garáž")){
             plan.getBatoh().vyndejZBatohu(nazevVeci);
             plan.getAktualniProstor().vratSousedniProstor("byt_partnerky").zamknout(false);
-            return "Odemkl jsi auto";
+            return "Odemkl jsi auto a můžeš se vydat za partnerkou";
         }
         else {
             return "Tohle nejde";
