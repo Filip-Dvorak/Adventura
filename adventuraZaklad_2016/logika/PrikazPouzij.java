@@ -2,7 +2,7 @@ package logika;
 
 public class PrikazPouzij implements IPrikaz{
 
-    private static final String NAZEV = "pouzij";
+    private static final String NAZEV = "použij";
     private HerniPlan plan;
 
     //konstruktor
@@ -19,8 +19,8 @@ public class PrikazPouzij implements IPrikaz{
         String nazevVeci = parametry[0];
         Vec vec = plan.getBatoh().getPredmet(nazevVeci);
         if (vec==null){
-            if(nazevVeci.equals("sprcha") && kdejsme.getNazev().equals("koupelna")){
-                return "Osprchoval jsi se";
+            if(nazevVeci.equals("líčení") && kdejsme.getNazev().equals("koupelna")){
+                return "Nalíčil jsi se";
             }
             if(nazevVeci.equals("auto") && kdejsme.getNazev().equals("garáž")){
                 return "Auto bez klíčů nenastartuješ";

@@ -46,4 +46,12 @@ public class Batoh {
         }
         return null;
     }
+
+    public String getAllItems() {
+        String vypis = "";
+        for(Vec neco: obsahBatohu){
+            vypis += neco.getNazev() + " ";
+        }
+        return vypis;
+    }
 }
