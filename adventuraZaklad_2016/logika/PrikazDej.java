@@ -21,7 +21,11 @@ public class PrikazDej implements IPrikaz {
         String veciCoMam = plan.getBatoh().getAllItems();
         if(veci.equals(veciCoMam)){
             if(prijemce.equals(plan.getAktualniProstor().getPostava().getJmeno())){
-                return plan.getAktualniProstor().getPostava().Vymena(veci);
+                String odpoved =  plan.getAktualniProstor().getPostava().Vymena(veci);
+                if(odpoved.equals(plan.getAktualniProstor().getPostava().getMluv())){
+                    plan.getAktualniProstor().vratSousedniProstor("soutěž").zamknout(false);
+                }
+                return odpoved;
             }
             else {
                 return "Tahle postava tu není";

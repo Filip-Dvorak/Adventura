@@ -10,6 +10,7 @@ public class Postava {
     String recChce;
     boolean probehlaVymena = false;
 
+
     public Postava(String jmeno, String mluvPred) {
         this.jmeno = jmeno;
         this.mluvPred = mluvPred;
@@ -25,7 +26,7 @@ public class Postava {
         }
         if(chci.equals(nabidka)){
             probehlaVymena = true;
-            return "Ok muzeme jet";
+            return this.getMluv();
         }
         else{
             return"Tohle není všechno co jsem po tobě chtěla";

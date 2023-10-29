@@ -53,6 +53,7 @@ public class HerniPlan {
         bytPartnerky.setVychod(garaz);
         bytPartnerky.setVychod(soutez);
         soutez.setVychod(bytPartnerky);
+        soutez.zamknout(true);
         bytPartnerky.zamknout(true);
         koupelna.zamknout(true);
         prostory.add(pokoj);

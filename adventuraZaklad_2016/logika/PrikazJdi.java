@@ -51,6 +51,9 @@ class PrikazJdi implements IPrikaz {
             if (sousedniProstor.jeZamceno() && sousedniProstor.getNazev().equals("koupelna")) {
                 return "Měl by ses nejdřív najíst a až potom se nalíčit (aby sis to nezničil jako minule)";
             }
+            if (sousedniProstor.jeZamceno() && sousedniProstor.getNazev().equals("soutěž")) {
+                return "Bez partnerky bych nejezdil, promluv sis ní nejdřív";
+            }
             plan.setAktualniProstor(sousedniProstor);
             return sousedniProstor.dlouhyPopis();
         }
