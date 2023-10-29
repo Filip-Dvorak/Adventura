@@ -30,13 +30,6 @@ public class Batoh {
         return null;
     }
 
-    public String dlouhyPopis(){
-        String vypis = "Obsah kosicku: ";
-        for(Vec neco: obsahBatohu){
-            vypis += neco.getNazev() + " ";
-        }
-        return vypis;
-    }
 
     public Vec getPredmet(String nazevVeci) {
         for (Vec neco: obsahBatohu){
@@ -53,5 +46,9 @@ public class Batoh {
             vypis += neco.getNazev() + " ";
         }
         return vypis;
+    }
+
+    public Set<Vec> getItems() {
+        return obsahBatohu;
     }
 }

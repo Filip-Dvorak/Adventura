@@ -18,10 +18,14 @@ public class Postava {
         this.coChce = coChce;
         this.mluvPo = mluvPo;
     }
-    public String Vymena (Set<Vec> nabidka){
-        if(coChce.equals(nabidka)){
+    public String Vymena (String nabidka){
+        String chci="";
+        for(Vec neco:coChce){
+            chci += neco.getNazev() +" ";
+        }
+        if(chci.equals(nabidka)){
             probehlaVymena = true;
-            return this.getMluv();
+            return "Ok muzeme jet";
         }
         else{
             return"Tohle není všechno co jsem po tobě chtěla";
