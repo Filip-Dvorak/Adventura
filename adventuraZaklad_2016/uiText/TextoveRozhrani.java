@@ -37,7 +37,7 @@ public class TextoveRozhrani {
         // základní cyklus programu - opakovaně se čtou příkazy a poté
         // se provádějí do konce hry.
 
-        while (!hra.konecHry()) {
+        while (!hra.konecHry()|| hra.getHerniPlan().getAktualniProstor().getNazev()!="soutěž") {
             String radek = prectiString();
             System.out.println(hra.zpracujPrikaz(radek));
         }

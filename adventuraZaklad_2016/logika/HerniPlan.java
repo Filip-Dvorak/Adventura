@@ -40,6 +40,7 @@ public class HerniPlan {
         Prostor jidlena = new Prostor("jídelna","jídelna, kde se dá najíst");
         Prostor garaz = new Prostor("garáž","garáž kde máě zaparkované auto");
         Prostor bytPartnerky = new Prostor("byt_partnerky","byt ve kterém bydlí tvoje partnerka");
+        Prostor soutez = new Prostor("soutěž", "Dorazili jste na soutež");
         
         // přiřazují se průchody mezi prostory (sousedící prostory)
         pokoj.setVychod(koupelna);
@@ -50,6 +51,8 @@ public class HerniPlan {
         garaz.setVychod(pokoj);
         garaz.setVychod(bytPartnerky);
         bytPartnerky.setVychod(garaz);
+        bytPartnerky.setVychod(soutez);
+        soutez.setVychod(bytPartnerky);
         bytPartnerky.zamknout(true);
         koupelna.zamknout(true);
         prostory.add(pokoj);
