@@ -1,6 +1,9 @@
 package logika;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -17,6 +20,7 @@ public class HerniPlan {
     private Prostor aktualniProstor;
     private Batoh batoh;
     private static final int kapacitaBatohu = 4;
+
     
      /**
      *  Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
@@ -45,6 +49,7 @@ public class HerniPlan {
         garaz.setVychod(pokoj);
         garaz.setVychod(bytPartnerky);
         bytPartnerky.setVychod(garaz);
+        bytPartnerky.zamknout(true);
 
         //přiřazují se věci prostorům
         pokoj.vlozVec(new Vec("klíče_od_auta", true));
@@ -68,7 +73,8 @@ public class HerniPlan {
     public Prostor getAktualniProstor() {
         return aktualniProstor;
     }
-    
+
+
     /**
      *  Metoda nastaví aktuální prostor, používá se nejčastěji při přechodu mezi prostory
      *

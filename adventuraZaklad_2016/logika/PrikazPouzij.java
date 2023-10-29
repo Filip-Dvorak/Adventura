@@ -26,6 +26,7 @@ public class PrikazPouzij implements IPrikaz{
         }
         if(vec.getNazev().equals("klíče_od_auta") &&kdejsme.getNazev().equals("garáž")){
             plan.getBatoh().vyndejZBatohu(nazevVeci);
+            plan.getAktualniProstor().vratSousedniProstor("byt_partnerky").zamknout(false);
             return "Odemkl jsi auto";
         }
         else {

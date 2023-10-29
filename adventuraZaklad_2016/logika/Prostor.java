@@ -19,8 +19,17 @@ public class Prostor {
 
     private String nazev;
     private String popis;
+    private boolean zamcena = false;
     private Set<Prostor> vychody;   // obsahuje sousední místnosti
     private List<Vec> seznamVeci;
+
+    //logika zamykaní prostoru
+    public void zamknout(boolean zamceno) {
+        zamcena = zamceno;
+    }
+    public boolean jeZamceno() {
+        return zamcena;
+    }
 
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
