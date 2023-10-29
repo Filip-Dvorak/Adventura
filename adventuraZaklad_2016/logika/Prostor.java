@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public class Prostor {
 
     private String nazev;
+    private Postava postava;
     private String popis;
     private boolean zamcena = false;
     private Set<Prostor> vychody;   // obsahuje sousední místnosti
@@ -29,6 +30,9 @@ public class Prostor {
     }
     public boolean jeZamceno() {
         return zamcena;
+    }
+    public void addPostava(Postava postava) {
+        this.postava = postava;
     }
 
     /**
@@ -124,10 +128,19 @@ public class Prostor {
      * @return Dlouhý popis prostoru
      */
     public String dlouhyPopis() {
-        return "Jsi v mistnosti/prostoru " + popis + ".\n"
-                + "Veci: " + seznamVeci() + "\n"
-                + popisVychodu();
+        if (postava != null) {
+
+          return  "Jsi v mistnosti/prostoru " + popis + ".\n"
+                    + "Veci: " + seznamVeci() + "\n"
+                    + "Postavy: " + postava.getJmeno() + "\n"
+                    + popisVychodu();
+        }else{
+            return  "Jsi v mistnosti/prostoru " + popis + ".\n"
+                    + "Veci: " + seznamVeci() + "\n"
+                    + popisVychodu();
+        }
     }
+
 
     /**
      * Vrací textový řetězec, který popisuje sousední východy, například:
@@ -217,5 +230,9 @@ public class Prostor {
      */
     public Collection<Prostor> getVychody() {
         return Collections.unmodifiableCollection(vychody);
+    }
+
+    public Postava getPostava() {
+        return postava;
     }
 }

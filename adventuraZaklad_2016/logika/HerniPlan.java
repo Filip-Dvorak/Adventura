@@ -58,13 +58,23 @@ public class HerniPlan {
         prostory.add(garaz);
         prostory.add(bytPartnerky);
 
+
         //přiřazují se věci prostorům
+        Vec pinteky = new Vec("pintky", true);
+        Vec snidane = new Vec("snídaně", true);
         pokoj.vlozVec(new Vec("klíče_od_auta", true));
         koupelna.vlozVec(new Vec("líčení", false));
-        koupelna.vlozVec(new Vec("pinetky", true));
-        jidlena.vlozVec(new Vec("snídaně", false));
+        koupelna.vlozVec(pinteky);
+        jidlena.vlozVec(snidane);
         jidlena.vlozVec(new Vec("svačina", true));
         garaz.vlozVec(new Vec("auto", false));
+
+        Postava partnerka = new Postava("partnerka", "Čau máš pro mě ty věci co jsem chtěla?");
+        Set<Vec> veciCoChce = new HashSet<>();
+        veciCoChce.add(pinteky);
+        veciCoChce.add(snidane);
+        partnerka.nastavVymenu(veciCoChce, "Dobrý můžeme jet");
+        bytPartnerky.addPostava(partnerka);
 
         batoh = new Batoh(kapacitaBatohu);
                 
