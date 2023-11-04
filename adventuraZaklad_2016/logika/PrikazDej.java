@@ -17,11 +17,18 @@ public class PrikazDej implements IPrikaz {
         }
         String prijemce = parametry[0];
         String[] veciArr = parametry[1].split(",");
-        String veci = veciArr[0]+ " " +veciArr[1] +" ";
+        String veci="";
+        for(int i=0;i<veciArr.length;i++){
+            veci+=veciArr[i]+" ";
+        }
+        String inversedVeci="";
+        for(int i=veciArr.length-1;i>=0;i--){
+            inversedVeci+=veciArr[i]+" ";
+        }
         String veciCoMam = plan.getBatoh().getAllItems();
-        if(veci.equals(veciCoMam)){
+        if(veci.equals(veciCoMam) || inversedVeci.equals(veciCoMam)){
             if(prijemce.equals(plan.getAktualniProstor().getPostava().getJmeno())){
-                String odpoved =  plan.getAktualniProstor().getPostava().Vymena(veci);
+                String odpoved =  plan.getAktualniProstor().getPostava().Vymena(veci, inversedVeci);
                 if(odpoved.equals(plan.getAktualniProstor().getPostava().getMluv())){
                     plan.getAktualniProstor().vratSousedniProstor("soutěž").zamknout(false);
                 }

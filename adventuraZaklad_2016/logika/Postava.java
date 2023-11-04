@@ -19,12 +19,12 @@ public class Postava {
         this.coChce = coChce;
         this.mluvPo = mluvPo;
     }
-    public String Vymena (String nabidka){
+    public String Vymena (String nabidka,String inversedNabidka){
         String chci="";
         for(Vec neco:coChce){
             chci += neco.getNazev() +" ";
         }
-        if(chci.equals(nabidka)){
+        if(chci.equals(nabidka)|| chci.equals(inversedNabidka)){
             probehlaVymena = true;
             return this.getMluv();
         }

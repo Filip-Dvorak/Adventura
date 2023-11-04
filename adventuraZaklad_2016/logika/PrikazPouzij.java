@@ -22,6 +22,9 @@ public class PrikazPouzij implements IPrikaz{
             if(nazevVeci.equals("líčení") && kdejsme.getNazev().equals("koupelna")){
                 return "Nalíčil jsi se";
             }
+            if(nazevVeci.equals("svačina") && kdejsme.getNazev().equals("jídelna")){
+                return "Tahle svačina asi není pro tebe";
+            }
             if(nazevVeci.equals("auto") && kdejsme.getNazev().equals("garáž")){
                 return "Auto bez klíčů nenastartuješ";
             }
