@@ -7,7 +7,6 @@ public class Postava {
     private Set<Vec> coChce;
     private String mluvPred;
     private String mluvPo;
-    String recChce;
     boolean probehlaVymena = false;
 
 
