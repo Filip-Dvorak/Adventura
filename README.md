@@ -29,5 +29,9 @@ Hráč začíná ve svém pokoji a musí se najíst v jídelně a nalíčit na s
 	 - ukončí hru
     
     
+## Parametry spouštění
+- Bez parametru se hra spustí v textovém rozhraní
+- Parametr -gui spustí hru v JavaFx rozhraní
+
 ## Mapa
 ![enter image description here](https://cdn.discordapp.com/attachments/821112771763765248/1168526071394742312/image.png?ex=655215b5&is=653fa0b5&hm=68a81499b2106c06c8ff7bafcf3af6f98515d5c670833ae1bacdb1a52a9ce349&)
