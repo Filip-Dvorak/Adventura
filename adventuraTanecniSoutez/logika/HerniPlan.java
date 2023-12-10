@@ -62,7 +62,7 @@ public class HerniPlan implements SubjectOfChange {
         jidlena.vlozVec(svacina);
         jidlena.vlozVec(new Vec("snídaně", false));
         garaz.vlozVec(new Vec("auto", false));
-        Postava partnerka = new Postava("partnerka", "Čau máš pro mě ty věci co jsem chtěla?");
+        InteragujiciPostava partnerka = new InteragujiciPostava("partnerka", "Čau máš pro mě ty věci co jsem chtěla?");
         Set<Vec> veciCoChce = new HashSet();
         veciCoChce.add(pinetky);
         veciCoChce.add(svacina);

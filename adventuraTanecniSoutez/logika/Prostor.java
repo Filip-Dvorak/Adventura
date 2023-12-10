@@ -160,6 +160,9 @@ public class Prostor {
     public Postava getPostava() {
         return this.postava;
     }
+    public InteragujiciPostava getInteragujiciPostava() {
+        return (InteragujiciPostava) this.postava;
+    }
 
     public double getPosLeft() {
         return posLeft;

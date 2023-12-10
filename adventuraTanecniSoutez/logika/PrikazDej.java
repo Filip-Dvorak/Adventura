@@ -30,7 +30,7 @@ public class PrikazDej implements IPrikaz {
             if (!veci.equals(veciCoMam) && !inversedVeci.equals(veciCoMam)) {
                 return "Tohle nemáš v batohu";
             } else if (prijemce.equals(this.plan.getAktualniProstor().getPostava().getJmeno())) {
-                String odpoved = this.plan.getAktualniProstor().getPostava().Vymena(veci, inversedVeci);
+                String odpoved = this.plan.getAktualniProstor().getInteragujiciPostava().Vymena(veci, inversedVeci);
                 if (odpoved.equals(this.plan.getAktualniProstor().getPostava().getMluv())) {
                     this.plan.getAktualniProstor().vratSousedniProstor("soutěž").zamknout(false);
                     this.plan.getBatoh().vyndejZBatohu("pinetky");
