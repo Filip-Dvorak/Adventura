@@ -23,7 +23,13 @@ public class PrikazPouzij implements IPrikaz {
                 } else if (nazevVeci.equals("svačina") && kdejsme.getNazev().equals("jídelna")) {
                     return "Tahle svačina asi není pro tebe";
                 } else if (nazevVeci.equals("auto") && kdejsme.getNazev().equals("garáž")) {
-                    return "Auto bez klíčů nenastartuješ";
+                    if(this.plan.getProstor("byt_partnerky").jeZamceno()) {
+                        return "Auto bez klíčů nenastartuješ";
+                    }
+                    else
+                    {
+                        return "Teď můžeš vyrazit";
+                    }
                 } else if (nazevVeci.equals("snídaně") && kdejsme.getNazev().equals("jídelna")) {
                     this.plan.getProstor("koupelna").zamknout(false);
                     return "To byl dobrej chálek";

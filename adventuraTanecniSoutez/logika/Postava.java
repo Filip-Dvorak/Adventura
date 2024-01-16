@@ -1,8 +1,5 @@
 package logika;
 
-import java.util.Iterator;
-import java.util.Set;
-
 public class Postava {
     private String jmeno;
     protected String mluvPred;

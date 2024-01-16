@@ -3,6 +3,7 @@ package logika;
 import java.util.Iterator;
 import java.util.Set;
 
+//soucast DU
 public class InteragujiciPostava extends Postava{
     private Set<Vec> coChce;
     private String mluvPo;
@@ -21,6 +22,7 @@ public class InteragujiciPostava extends Postava{
         String chci = "";
 
         Vec neco;
+        //soucast DU
         for(Iterator var4 = this.coChce.iterator(); var4.hasNext(); chci = chci + neco.getNazev() + " ") {
             neco = (Vec)var4.next();
         }

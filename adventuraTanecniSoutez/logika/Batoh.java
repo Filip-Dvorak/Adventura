@@ -17,6 +17,7 @@ public class Batoh implements SubjectOfChange {
         this.kapacitaBatohu = kapacitaBatohu;
         this.obsahBatohu = new HashSet();
     }
+    //soucast DU
     public static Batoh getInstance(int kapacitaBatohu) {
         if (instance == null) {
             instance = new Batoh(kapacitaBatohu);
