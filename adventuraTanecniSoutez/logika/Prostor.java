@@ -50,23 +50,6 @@ public class Prostor {
         this.vychody.add(vedlejsi);
     }
 
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        } else if (!(o instanceof Prostor)) {
-            return false;
-        } else {
-            Prostor druhy = (Prostor)o;
-            return Objects.equals(this.nazev, druhy.nazev);
-        }
-    }
-
-    public int hashCode() {
-        int vysledek = 3;
-        int hashNazvu = Objects.hashCode(this.nazev);
-        vysledek = 37 * vysledek + hashNazvu;
-        return vysledek;
-    }
 
     public String getNazev() {
         return this.nazev;
